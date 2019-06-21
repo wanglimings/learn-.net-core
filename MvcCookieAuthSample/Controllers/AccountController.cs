@@ -12,24 +12,25 @@ using System.Security.Claims;
 
 namespace MvcCookieAuthSample.Controllers
 {
-    [Authorize]
     public class AccountController : Controller
     {
-        public IActionResult MakeLogin()
+        public IActionResult Login(string returnUrl ="/")
         {
             var claims=new List<Claim>{
                 new Claim(ClaimTypes.Name,"jesse"),
                 new Claim(ClaimTypes.Role,"admin")
             };
+            
             var claimIdentity=new ClaimsIdentity(claims,CookieAuthenticationDefaults.AuthenticationScheme);
             HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,new ClaimsPrincipal(claimIdentity));
-            return Ok();
+           return  Redirect(returnUrl);
+            //return Ok();
         }
         public IActionResult Logout()
         {
-             
+           
             HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return Ok();
+            return Redirect("/");
         }
     }
 }

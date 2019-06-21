@@ -1,0 +1,14 @@
+D:\learn-.net-core\jwtAuthSample\bin\Debug\netcoreapp2.2\JwtAuthSample.deps.json
+D:\learn-.net-core\jwtAuthSample\bin\Debug\netcoreapp2.2\JwtAuthSample.runtimeconfig.json
+D:\learn-.net-core\jwtAuthSample\bin\Debug\netcoreapp2.2\JwtAuthSample.runtimeconfig.dev.json
+D:\learn-.net-core\jwtAuthSample\bin\Debug\netcoreapp2.2\JwtAuthSample.dll
+D:\learn-.net-core\jwtAuthSample\bin\Debug\netcoreapp2.2\JwtAuthSample.pdb
+D:\learn-.net-core\jwtAuthSample\obj\Debug\netcoreapp2.2\JwtAuthSample.csprojAssemblyReference.cache
+D:\learn-.net-core\jwtAuthSample\obj\Debug\netcoreapp2.2\JwtAuthSample.csproj.CoreCompileInputs.cache
+D:\learn-.net-core\jwtAuthSample\obj\Debug\netcoreapp2.2\JwtAuthSample.RazorAssemblyInfo.cache
+D:\learn-.net-core\jwtAuthSample\obj\Debug\netcoreapp2.2\JwtAuthSample.RazorAssemblyInfo.cs
+D:\learn-.net-core\jwtAuthSample\obj\Debug\netcoreapp2.2\JwtAuthSample.AssemblyInfoInputs.cache
+D:\learn-.net-core\jwtAuthSample\obj\Debug\netcoreapp2.2\JwtAuthSample.AssemblyInfo.cs
+D:\learn-.net-core\jwtAuthSample\obj\Debug\netcoreapp2.2\JwtAuthSample.RazorTargetAssemblyInfo.cache
+D:\learn-.net-core\jwtAuthSample\obj\Debug\netcoreapp2.2\JwtAuthSample.dll
+D:\learn-.net-core\jwtAuthSample\obj\Debug\netcoreapp2.2\JwtAuthSample.pdb
