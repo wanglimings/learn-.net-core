@@ -28,7 +28,7 @@ namespace JwtAuthSample
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         { 
-            services.Configure<JwtSettings>(Configuration);
+            services.Configure<JwtSettings>(Configuration.GetSection("JwtSettings"));
             var jwtSettings=new JwtSettings();
             Configuration.Bind("JwtSettings",jwtSettings);
             services.AddAuthentication(options=>{
