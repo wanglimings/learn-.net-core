@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/JwtAuthSample/bin/Debug/netcoreapp2.2/JwtAuthSample.dll",
+            "program": "${workspaceFolder}/MvcCookieAuthSample/bin/Debug/netcoreapp2.2/MvcCookieAuthSample.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/JwtAuthSample",
+            "cwd": "${workspaceFolder}/MvcCookieAuthSample",
             "stopAtEntry": false,
             "serverReadyAction": {
                 "action": "openExternally",

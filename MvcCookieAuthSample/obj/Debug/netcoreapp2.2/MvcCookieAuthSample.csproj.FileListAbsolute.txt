@@ -29,3 +29,5 @@ D:\learn-.net-core\MvcCookieAuthSample\obj\Debug\netcoreapp2.2\MvcCookieAuthSamp
 D:\learn-.net-core\MvcCookieAuthSample\obj\Debug\netcoreapp2.2\MvcCookieAuthSample.dll
 D:\learn-.net-core\MvcCookieAuthSample\obj\Debug\netcoreapp2.2\MvcCookieAuthSample.pdb
 D:\learn-.net-core\MvcCookieAuthSample\obj\Debug\netcoreapp2.2\MvcCookieAuthSample.csproj.CopyComplete
+D:\learn-.net-core\MvcCookieAuthSample\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
+D:\learn-.net-core\MvcCookieAuthSample\obj\Debug\netcoreapp2.2\Razor\Views\Account\Register.g.cshtml.cs

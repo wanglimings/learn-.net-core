@@ -15,7 +15,7 @@ using System.IdentityModel.Tokens.Jwt;
 namespace JwtAuthSample
 {
     //      api/  Authorize   /test
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     public class AuthorizeController : Controller
     {
         private JwtSettings _jewSettings;
@@ -37,7 +37,9 @@ namespace JwtAuthSample
                 }
                 var claims=new Claim[]{
                     new Claim(ClaimTypes.Name,"jesse"),
-                    new Claim(ClaimTypes.Role,"admin")
+                    new Claim(ClaimTypes.Role,"admin"),
+                    new Claim("QQ","123456"),
+                    new Claim("wechat","789")
                 };
                 var key=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jewSettings.Secretkey));
                 var creds=new SigningCredentials(key,SecurityAlgorithms.HmacSha256);

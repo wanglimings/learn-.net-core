@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
 
 namespace JwtAuthSample.Controllers
 {
-    [Authorize]
+    [Authorize(Roles="admin,user")]
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
