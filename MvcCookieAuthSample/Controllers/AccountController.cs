@@ -20,71 +20,105 @@ namespace MvcCookieAuthSample.Controllers
         private UserManager<ApplicationUser> _userManager;
         private SignInManager<ApplicationUser> _signInManager;
 
-        public AccountController(UserManager<ApplicationUser> userManager,SignInManager<ApplicationUser> signInManager)
+        private IActionResult RedirectToLocal(string returnUrl)
+        {
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+
+            return RedirectToAction(nameof(HomeController.Index), "Home");
+        }
+
+        private void AddErrors(IdentityResult result)
+        {
+            foreach (var error in  result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
+            }
+        }
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
         }
-        public IActionResult Register ()
+
+        public IActionResult Register(string returnUrl = null)
         {
+            ViewData["ReturnUrl"] = returnUrl;
             return View();
 
         }
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterViewModel registerViewModel)
+        public async Task<IActionResult> Register(RegisterViewModel registerViewModel, string returnUrl)
         {
-            var identieyUser=new ApplicationUser
+            if (ModelState.IsValid)
             {
-                Email = registerViewModel.Email,
-                UserName = registerViewModel.Email,
-                NormalizedUserName = registerViewModel.Email,
+                ViewData["ReturnUrl"] = returnUrl;
+                var identieyUser = new ApplicationUser
+                {
+                    Email = registerViewModel.Email,
+                    UserName = registerViewModel.Email,
+                    NormalizedUserName = registerViewModel.Email,
 
-            };
-            var identityResult = await _userManager.CreateAsync(identieyUser, registerViewModel.Password);
-            if (identityResult.Succeeded)
-            {
-               await _signInManager.SignInAsync(identieyUser, new AuthenticationProperties{IsPersistent = true});
-                return RedirectToAction("Home", "index");
+                };
+                var identityResult = await _userManager.CreateAsync(identieyUser, registerViewModel.Password);
+                if (identityResult.Succeeded)
+                {
+                    await _signInManager.SignInAsync(identieyUser, new AuthenticationProperties { IsPersistent = true });
+                    return RedirectToLocal(returnUrl);
+                }
+                else
+                {
+                    AddErrors(identityResult);
+                }
             }
 
             return View();
 
         }
 
-        public IActionResult Login()
+        public IActionResult Login(string returnUrl = null)
         {
+            ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Login(RegisterViewModel loginViewModel)
+        public async Task<IActionResult> Login(LoginViewModel loginViewModel, string returnUrl)
         {
-            var user = await _userManager.FindByEmailAsync(loginViewModel.Email);
-            if (user == null)
+            if (ModelState.IsValid)
             {
+                ViewData["ReturnUrl"] = returnUrl;
+                var user = await _userManager.FindByEmailAsync(loginViewModel.Email);
+                if (user == null)
+                {
 
+                }
+
+                await _signInManager.SignInAsync(user, new AuthenticationProperties { IsPersistent = true });
+                return RedirectToLocal(returnUrl);
             }
+            return View();
 
-            await _signInManager.SignInAsync(user, new AuthenticationProperties {IsPersistent = true});
-            return RedirectToAction("Index", "Home");
         }
- 
 
-        public IActionResult makinLogin(string returnUrl ="/")
+
+        public async Task<IActionResult> makinLogin(string returnUrl = "/")
         {
-            var claims=new List<Claim>{
+            var claims = new List<Claim>{
                 new Claim(ClaimTypes.Name,"jesse"),
                 new Claim(ClaimTypes.Role,"admin")
             };
-            
-            var claimIdentity=new ClaimsIdentity(claims,CookieAuthenticationDefaults.AuthenticationScheme);
-            HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,new ClaimsPrincipal(claimIdentity));
-           return  Redirect(returnUrl);
+
+            var claimIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimIdentity));
+            return Redirect(returnUrl);
             //return Ok();
         }
-        public IActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
-           
-            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            await _signInManager.SignOutAsync();
+            // await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login", "Account");
         }
     }

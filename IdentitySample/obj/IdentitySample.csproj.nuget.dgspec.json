@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\learn-.net-core\\identitysample\\IdentitySample.csproj": {}
+    "D:\\learn-.net-core\\IdentitySample\\IdentitySample.csproj": {}
   },
   "projects": {
-    "D:\\learn-.net-core\\identitysample\\IdentitySample.csproj": {
+    "D:\\learn-.net-core\\IdentitySample\\IdentitySample.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\learn-.net-core\\identitysample\\IdentitySample.csproj",
+        "projectUniqueName": "D:\\learn-.net-core\\IdentitySample\\IdentitySample.csproj",
         "projectName": "IdentitySample",
-        "projectPath": "D:\\learn-.net-core\\identitysample\\IdentitySample.csproj",
+        "projectPath": "D:\\learn-.net-core\\IdentitySample\\IdentitySample.csproj",
         "packagesPath": "C:\\Users\\wangliming\\.nuget\\packages\\",
-        "outputPath": "D:\\learn-.net-core\\identitysample\\obj\\",
+        "outputPath": "D:\\learn-.net-core\\IdentitySample\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
