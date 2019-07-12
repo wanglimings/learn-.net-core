@@ -1,0 +1,11 @@
+C:\Users\wangliming\Desktop\EFCore学习\EFCoreLearn\EFCoreLearn\bin\Debug\netcoreapp2.2\EFCoreLearn.deps.json
+C:\Users\wangliming\Desktop\EFCore学习\EFCoreLearn\EFCoreLearn\bin\Debug\netcoreapp2.2\EFCoreLearn.runtimeconfig.json
+C:\Users\wangliming\Desktop\EFCore学习\EFCoreLearn\EFCoreLearn\bin\Debug\netcoreapp2.2\EFCoreLearn.runtimeconfig.dev.json
+C:\Users\wangliming\Desktop\EFCore学习\EFCoreLearn\EFCoreLearn\bin\Debug\netcoreapp2.2\EFCoreLearn.dll
+C:\Users\wangliming\Desktop\EFCore学习\EFCoreLearn\EFCoreLearn\obj\Debug\netcoreapp2.2\EFCoreLearn.csprojAssemblyReference.cache
+C:\Users\wangliming\Desktop\EFCore学习\EFCoreLearn\EFCoreLearn\obj\Debug\netcoreapp2.2\EFCoreLearn.csproj.CoreCompileInputs.cache
+C:\Users\wangliming\Desktop\EFCore学习\EFCoreLearn\EFCoreLearn\obj\Debug\netcoreapp2.2\EFCoreLearn.AssemblyInfoInputs.cache
+C:\Users\wangliming\Desktop\EFCore学习\EFCoreLearn\EFCoreLearn\obj\Debug\netcoreapp2.2\EFCoreLearn.AssemblyInfo.cs
+C:\Users\wangliming\Desktop\EFCore学习\EFCoreLearn\EFCoreLearn\bin\Debug\netcoreapp2.2\EFCoreLearn.pdb
+C:\Users\wangliming\Desktop\EFCore学习\EFCoreLearn\EFCoreLearn\obj\Debug\netcoreapp2.2\EFCoreLearn.dll
+C:\Users\wangliming\Desktop\EFCore学习\EFCoreLearn\EFCoreLearn\obj\Debug\netcoreapp2.2\EFCoreLearn.pdb
